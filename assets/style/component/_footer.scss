@@ -1,0 +1,81 @@
+@use "../setting" as s;
+
+/*フッター------------------*/
+.footer {
+    width: 100%;
+    height: s.vw(68);
+    background-color: s.$color-green;
+    @include s.rs(
+        (
+            height: s.mvw(96),
+        )
+    );
+    &__container {
+        @include s.container(100%);
+        height: 100%;
+        padding-inline: s.vw(16);
+        @include s.rs(
+            (
+                max-width: s.mvw(1400),
+                padding-inline: s.mvw(115),
+            )
+        );
+    }
+    &-nav {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-block: auto;
+        @include s.rs(
+            (
+                margin-block: auto,
+            )
+        );
+        &__list {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            @include s.rs(
+                (
+                    font-size: s.mvw(16),
+                    font-weight: bold,
+                )
+            );
+            &-item {
+                height: s.vw(20);
+                margin-block: auto;
+                @include s.rs(
+                    (
+                        height: s.mvw(20),
+                    )
+                );
+            }
+            &-link {
+                display: inline-block;
+                width: 100%;
+                height: s.vw(20);
+                font-size: s.vw(13);
+                font-weight: 400;
+                line-height: 1;
+                color: s.$color-white;
+                padding-inline: s.vw(18);
+                @include s.rs(
+                    (
+                        font-size: s.mvw(15),
+                        padding-inline: s.mvw(20),
+                    )
+                );
+                &:not(:last-of-type) {
+                    border-right: s.vw(1) solid s.$color-white;
+                    @include s.rs(
+                        (
+                            border-right: s.mvw(1) solid s.$color-white,
+                        )
+                    );
+                }
+            }
+        }
+    }
+}
