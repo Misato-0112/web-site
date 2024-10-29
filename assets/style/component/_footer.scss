@@ -48,23 +48,7 @@
                 margin-block: auto;
                 @include s.rs(
                     (
-                        height: s.mvw(20),
-                    )
-                );
-            }
-            &-link {
-                display: inline-block;
-                width: 100%;
-                height: s.vw(20);
-                font-size: s.vw(13);
-                font-weight: 400;
-                line-height: 1;
-                color: s.$color-white;
-                padding-inline: s.vw(18);
-                @include s.rs(
-                    (
-                        font-size: s.mvw(15),
-                        padding-inline: s.mvw(20),
+                        height: s.mvw(24),
                     )
                 );
                 &:not(:last-of-type) {
@@ -72,6 +56,30 @@
                     @include s.rs(
                         (
                             border-right: s.mvw(1) solid s.$color-white,
+                        )
+                    );
+                }
+            }
+            &-link {
+                display: block;
+                width: 100%;
+                height: 100%;
+                font-size: s.vw(13);
+                font-weight: 400;
+                line-height: 1.5;
+                color: s.$color-white;
+                padding-inline: s.vw(16);
+                @include s.rs(
+                    (
+                        font-size: s.mvw(15),
+                        padding-inline: s.mvw(17),
+                    )
+                );
+                &--faq {
+                    @include s.rs(
+                        (
+                            padding-left: s.mvw(23),
+                            letter-spacing: -0.06em,
                         )
                     );
                 }

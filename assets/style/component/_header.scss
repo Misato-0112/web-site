@@ -35,6 +35,15 @@
         &-logo {
             display: inline-block;
             vertical-align: baseline;
+            margin-top: s.vw(2);
+            @include s.rs(
+                (
+                    width: s.mvw(264),
+                    padding-bottom: s.mvw(4),
+                    padding-left: s.mvw(2),
+                    margin-top: s.mvw(4),
+                )
+            );
         }
     }
     &-nav {
@@ -54,7 +63,7 @@
                 (
                     font-size: s.mvw(16),
                     font-weight: bold,
-                    gap: s.mvw(40),
+                    gap: s.mvw(39),
                 )
             );
             &-item {
@@ -66,7 +75,7 @@
                 height: 100%;
                 @include s.rs(
                     (
-                        padding-block: s.mvw(43),
+                        padding-block: s.mvw(42),
                     )
                 );
             }
@@ -90,8 +99,9 @@
         cursor: pointer;
         padding: 0;
         margin: auto 0;
-        &-icon {
+        &-image {
             display: block;
+            padding-top: s.vw(3);
         }
     }
     &-nav {
@@ -101,7 +111,7 @@
         }
         &__list {
             position: fixed;
-            top: s.vw(60);
+            top: s.vw(63);
             left: 0;
             right: 0;
             z-index: 10;
@@ -109,11 +119,12 @@
             text-align: center;
             background-color: s.$color-green;
             border-radius: s.vw(24);
-            padding-block: s.vw(30);
+            padding-top: s.vw(32);
+            padding-bottom: s.vw(33);
             margin-inline: s.vw(16);
             &-item {
                 &:not(:last-of-type) {
-                    margin-bottom: s.vw(10);
+                    margin-bottom: s.vw(25);
                 }
             }
             &-link {

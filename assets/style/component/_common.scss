@@ -31,6 +31,11 @@ body {
     line-height: 1.75;
     color: s.$color-text;
     font-family: "Noto Sans JP", serif;
+    @include s.rs(
+        (
+            font-size: s.mvw(18),
+        )
+    );
 }
 
 /*セクション共通------------------*/
@@ -43,9 +48,11 @@ body {
             font-size: s.vw(20);
             font-weight: 700;
             @include s.tracking(0);
+            line-height: 1.4;
             @include s.rs(
                 (
                     font-size: s.mvw(28),
+                    line-height: 1.6,
                 )
             );
         }
@@ -53,10 +60,182 @@ body {
             @include s.font-montserrat(600);
             font-size: s.vw(16);
             @include s.tracking(0);
+            letter-spacing: 0.05em;
             color: s.$color-green;
             @include s.rs(
                 (
                     font-size: s.mvw(20),
+                )
+            );
+        }
+    }
+}
+
+/*ページタイトル*/
+.page-title {
+    margin-top: s.vw(60);
+    padding-top: s.vw(23);
+    padding-bottom: s.vw(29);
+    @include s.rs(
+        (
+            margin-top: s.mvw(114),
+            padding-top: s.mvw(40),
+            padding-bottom: s.mvw(50),
+        )
+    );
+    &__container {
+        @include s.container(100%);
+        padding-inline: s.vw(15);
+        @include s.rs(
+            (
+                padding-inline: s.mvw(99),
+            )
+        );
+    }
+    &__heading {
+        @include s.rs(
+            (
+                position: relative,
+            )
+        );
+        &-image {
+            height: s.vw(230);
+            background-image: url("/assets/images/products_service/main_visual_sp.png");
+            background-size: cover;
+            background-position: center;
+            border-radius: s.vw(24);
+            margin-inline: s.vw(1);
+            @include s.rs(
+                (
+                    height: s.mvw(550),
+                    background-image: url("/assets/images/products_service/main_visual_pc.png"),
+                    border-radius: s.mvw(24),
+                    margin-inline: s.mvw(1),
+                )
+            );
+        }
+        &-title {
+            font-size: s.vw(30);
+            font-weight: 700;
+            @include s.tracking(0);
+            line-height: 1;
+            margin-top: s.vw(29);
+            @include s.rs(
+                (
+                    position: absolute,
+                    bottom: 0,
+                    left: 0,
+                    font-size: s.mvw(36),
+                    line-height: 1.6,
+                    background-color: s.$color-white,
+                    border-top-right-radius: s.mvw(40),
+                    padding: s.mvw(26) s.mvw(38) s.mvw(29) s.mvw(41),
+                    margin-top: 0,
+                )
+            );
+        }
+    }
+}
+
+/*パンくずリスト*/
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: s.vw(12);
+    letter-spacing: 0.03em;
+    margin-top: s.vw(26);
+    margin-right: s.vw(13);
+    @include s.rs(
+        (
+            font-size: s.mvw(12),
+            margin-top: s.mvw(17),
+            margin-right: s.mvw(97),
+            letter-spacing: 0.02em,
+        )
+    );
+    &__list {
+        display: inline-block;
+        vertical-align: bottom;
+        &:not(:last-of-type) {
+            &::after {
+                display: inline-block;
+                width: s.vw(5);
+                content: url("/assets/images/common/icon_arrow.svg");
+                vertical-align: middle;
+                margin-left: s.vw(4);
+                margin-right: s.vw(6);
+                @include s.rs(
+                    (
+                        width: s.mvw(5),
+                        margin-left: s.mvw(4),
+                        margin-right: s.mvw(6),
+                    )
+                );
+            }
+        }
+        &-link {
+            height: 100%;
+            &--none {
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+/*ページセクションタイトル*/
+.page-section {
+    &__title {
+        position: relative;
+        font-size: s.vw(22);
+        font-weight: 700;
+        @include s.tracking(0);
+        line-height: 1.4;
+        margin-bottom: s.vw(11);
+        @include s.rs(
+            (
+                font-size: s.mvw(28),
+                line-height: 1.6,
+                margin-bottom: s.mvw(21),
+            )
+        );
+        &::before {
+            position: absolute;
+            top: s.vw(29);
+            left: s.vw(1);
+            z-index: 9;
+            content: "";
+            display: block;
+            width: 100%;
+            height: s.vw(3);
+            background-color: s.$color-gray;
+            margin-top: s.vw(10);
+            @include s.rs(
+                (
+                    top: s.mvw(29),
+                    height: s.mvw(5),
+                    margin-top: s.mvw(32),
+                )
+            );
+        }
+        &::after {
+            position: absolute;
+            top: s.vw(29);
+            left: s.vw(1);
+            z-index: 10;
+            content: "";
+            display: block;
+            width: s.vw(50);
+            height: s.vw(3);
+            background-color: s.$color-green;
+            margin-top: s.vw(10);
+            @include s.rs(
+                (
+                    top: s.mvw(29),
+                    width: s.mvw(100),
+                    height: s.mvw(5),
+                    margin-top: s.mvw(32),
                 )
             );
         }

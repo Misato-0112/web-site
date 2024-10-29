@@ -1,0 +1,260 @@
+@use "../setting" as s;
+
+/*ギャラリー------------------*/
+.gallery {
+    &__container {
+        @include s.container(100%);
+        padding-inline: s.vw(15);
+        @include s.rs(
+            (
+                width: s.mvw(800),
+                padding-inline: 0,
+                margin-inline: auto,
+            )
+        );
+    }
+}
+
+.slider-container {
+    width: 100%;
+    padding-top: s.vw(24);
+    padding-bottom: s.vw(57);
+    @include s.rs(
+        (
+            padding-top: s.mvw(32),
+            padding-bottom: s.mvw(61),
+        )
+    );
+}
+
+.swiper {
+    &-button-next,
+    &-button-prev {
+        display: none;
+    }
+
+    &-pagination {
+        font-size: s.vw(4);
+        @include s.rs(
+            (
+                font-size: s.mvw(32),
+            )
+        );
+        &-bullet {
+            background-color: #eee;
+            opacity: 1;
+            --swiper-pagination-bullet-horizontal-gap: 0.769vw;
+            @include s.rs(
+                (
+                    --swiper-pagination-bullet-horizontal-gap: 0.25vw,
+                )
+            );
+            &-active {
+                background-color: s.$color-green;
+            }
+        }
+    }
+    &-slide__image {
+        height: s.vw(237);
+        object-fit: cover;
+        border-radius: s.vw(24);
+        @include s.rs(
+            (
+                height: s.mvw(500),
+                border-radius: s.mvw(24),
+            )
+        );
+    }
+}
+
+/*特徴------------------*/
+.service_feature {
+    width: 100%;
+    &__container {
+        @include s.container(100%);
+        padding-bottom: s.vw(52);
+        padding-inline: s.vw(16);
+        @include s.rs(
+            (
+                width: s.mvw(800),
+                padding-inline: 0,
+                padding-bottom: s.vw(54),
+                margin-inline: auto,
+            )
+        );
+    }
+}
+
+.triple-column {
+    &__contents {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: s.vw(35);
+        padding-top: s.vw(24);
+
+        @include s.rs(
+            (
+                flex-direction: row,
+                column-gap: s.mvw(30),
+                padding-top: s.mvw(32),
+                margin-inline: auto,
+            )
+        );
+        &-item {
+            display: block;
+            width: 100%;
+            @include s.rs(
+                (
+                    width: s.mvw(369),
+                )
+            );
+            &-image {
+                display: block;
+                width: 100%;
+                height: s.vw(200);
+                border-radius: s.vw(16);
+
+                @include s.rs(
+                    (
+                        height: s.mvw(150),
+                        border-radius: s.mvw(16),
+                    )
+                );
+            }
+            &-title {
+                font-size: s.vw(18);
+                font-weight: 700;
+                letter-spacing: 0.003em;
+                line-height: 1.75;
+                margin-top: s.vw(7);
+                line-break: anywhere;
+                @include s.rs(
+                    (
+                        font-size: s.mvw(19),
+                        letter-spacing: -0.05em,
+                        line-height: 1.65,
+                        margin-top: s.mvw(8),
+                    )
+                );
+            }
+        }
+    }
+}
+
+/*メーカー希望小売価格------------------*/
+.price {
+    width: 100%;
+    &__container {
+        @include s.container(100%);
+        padding-bottom: s.vw(52);
+        padding-inline: s.vw(15);
+        @include s.rs(
+            (
+                width: s.mvw(800),
+                padding-inline: 0,
+                margin-inline: auto,
+                padding-bottom: s.mvw(56),
+            )
+        );
+    }
+    &__text {
+        font-size: s.vw(32);
+        @include s.font-montserrat(700);
+        line-height: 1.5;
+        letter-spacing: -0.045em;
+        padding-top: s.vw(11);
+        transform: scale(1.18, 0.9);
+        margin-left: s.vw(29);
+        @include s.rs(
+            (
+                font-size: s.mvw(32),
+                padding-top: s.mvw(19),
+                margin-left: s.mvw(45),
+            )
+        );
+        &--small {
+            font-size: s.vw(16);
+            padding-top: s.vw(8);
+            @include s.rs(
+                (
+                    font-size: s.mvw(16),
+                    padding-top: s.mvw(8),
+                )
+            );
+        }
+    }
+}
+
+/*スペック ------------------*/
+.spec {
+    width: 100%;
+    &__container {
+        @include s.container(100%);
+        padding-bottom: s.vw(53);
+        padding-inline: s.vw(16);
+        @include s.rs(
+            (
+                width: s.mvw(800),
+                padding-inline: 0,
+                margin-inline: auto,
+                padding-bottom: s.mvw(53),
+            )
+        );
+    }
+    &__title-sub {
+        font-size: s.vw(20);
+        font-weight: 700;
+        vertical-align: middle;
+        padding-top: s.vw(21);
+        @include s.rs(
+            (
+                font-size: s.mvw(24),
+                padding-top: s.mvw(21),
+            )
+        );
+        &::before {
+            content: "";
+            display: inline-block;
+            width: s.vw(2);
+            height: s.vw(30);
+            background-color: s.$color-green;
+            margin-right: s.vw(16);
+            margin-bottom: s.vw(3);
+            @include s.rs(
+                (
+                    width: s.mvw(40),
+                    height: s.mvw(2),
+                    margin-right: s.mvw(20),
+                    margin-bottom: s.mvw(3),
+                )
+            );
+        }
+    }
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: s.vw(16);
+        border: 1px solid s.$color-gray;
+        @include s.rs(
+            (
+                font-size: s.mvw(16),
+            )
+        );
+        &-title {
+            display: block;
+            font-weight: 700;
+            text-align: start;
+            background-color: s.$color-table;
+            border: 1px solid s.$color-gray;
+        }
+        &-description {
+            display: block;
+            font-weight: 400;
+            text-align: start;
+            border: 1px solid s.$color-gray;
+        }
+    }
+}

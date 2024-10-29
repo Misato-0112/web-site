@@ -9,3 +9,19 @@ $(document).ready(function () {
         hamburger.removeClass("hamburger-nav--active");
     });
 });
+
+if (document.querySelector(".swiper")) {
+    const mySwiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
