@@ -248,13 +248,13 @@
             font-weight: 700;
             text-align: start;
             background-color: s.$color-table;
-            border: 1px solid s.$color-gray;
+            border: s.vw(1) solid s.$color-gray;
         }
         &-description {
             display: block;
             font-weight: 400;
             text-align: start;
-            border: 1px solid s.$color-gray;
+            border: s.vw(1) solid s.$color-gray;
         }
     }
 }
