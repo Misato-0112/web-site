@@ -60,7 +60,6 @@ body {
             @include s.font-montserrat(600);
             font-size: s.vw(16);
             @include s.tracking(0);
-            letter-spacing: 0.05em;
             color: s.$color-green;
             @include s.rs(
                 (
@@ -75,19 +74,19 @@ body {
 .page-title {
     margin-top: s.vw(60);
     padding-top: s.vw(23);
-    padding-bottom: s.vw(29);
     @include s.rs(
         (
             margin-top: s.mvw(114),
             padding-top: s.mvw(40),
-            padding-bottom: s.mvw(50),
         )
     );
     &__container {
         @include s.container(100%);
+        max-width: 1400px;
         padding-inline: s.vw(15);
         @include s.rs(
             (
+                max-width: s.mvw(1400),
                 padding-inline: s.mvw(99),
             )
         );
@@ -144,38 +143,59 @@ body {
     justify-content: flex-end;
     align-items: center;
     font-size: s.vw(12);
-    letter-spacing: 0.03em;
-    margin-top: s.vw(26);
-    margin-right: s.vw(13);
+    letter-spacing: 0;
+    margin-top: s.vw(27);
+    padding-right: s.vw(15);
+    margin-inline: auto;
     @include s.rs(
         (
+            max-width: s.mvw(1400),
             font-size: s.mvw(12),
-            margin-top: s.mvw(17),
-            margin-right: s.mvw(97),
-            letter-spacing: 0.02em,
+            margin-top: s.mvw(18),
+            padding-right: s.mvw(99),
         )
     );
     &__list {
-        display: inline-block;
-        vertical-align: bottom;
+        position: relative;
+        padding-right: s.vw(19);
+        @include s.rs(
+            (
+                padding-right: s.mvw(19),
+            )
+        );
         &:not(:last-of-type) {
             &::after {
                 display: inline-block;
+                position: absolute;
+                content: "";
+                top: calc(50% - s.vw(4));
+                right: s.vw(7);
+                display: inline-block;
                 width: s.vw(5);
-                content: url("/assets/images/common/icon_arrow.svg");
+                height: s.vw(10);
+                background-image: url("/assets/images/common/icon_arrow.svg");
+                background-size: contain;
                 vertical-align: middle;
-                margin-left: s.vw(4);
-                margin-right: s.vw(6);
                 @include s.rs(
                     (
+                        right: s.mvw(7),
                         width: s.mvw(5),
-                        margin-left: s.mvw(4),
-                        margin-right: s.mvw(6),
+                        height: s.mvw(10),
                     )
                 );
+                // タブレット用
+                @include s.mq(md) {
+                    top: calc(50% - s.vwt(4));
+                }
+
+                // PC用
+                @include s.mq(lg) {
+                    top: calc(50% - s.px2Rem(4));
+                }
             }
         }
         &-link {
+            display: block;
             height: 100%;
             &--none {
                 pointer-events: none;
@@ -214,6 +234,7 @@ body {
             @include s.rs(
                 (
                     top: s.mvw(29),
+                    left: s.mvw(1),
                     height: s.mvw(5),
                     margin-top: s.mvw(32),
                 )
@@ -233,6 +254,7 @@ body {
             @include s.rs(
                 (
                     top: s.mvw(29),
+                    left: s.mvw(1),
                     width: s.mvw(100),
                     height: s.mvw(5),
                     margin-top: s.mvw(32),

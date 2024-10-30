@@ -72,13 +72,15 @@
                 @include s.rs(
                     (
                         font-size: s.mvw(15),
-                        padding-inline: s.mvw(17),
+                        padding-right: s.mvw(21),
+                        padding-left: 0px,
                     )
                 );
                 &--faq {
                     @include s.rs(
                         (
-                            padding-left: s.mvw(23),
+                            padding-left: s.mvw(17),
+                            padding-right: 0,
                             letter-spacing: -0.06em,
                         )
                     );

@@ -13,7 +13,7 @@
     <meta property="og:description"
         content="Kirameki Farmは革新的な農業機器とビッグデータ、自動運転のロボット、リジェネラティブ農業を駆使して持続可能な農業を目指すイノベーション企業です。次世代の子どもたちに環境に優しい未来農業を残すために、効率化と環境配慮を融合した活動を推進しています。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://example.com/price/">
+    <meta property="og:url" content="https://example.com/price">
     <meta property=" og:site_name" content="Kirameki Farm">
 
     <!-- cssリセット -->
@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
         rel="stylesheet">
     <!-- swiperの読み込み -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- スタイルシート読み込み -->
     <link rel="stylesheet" href="/assets/style/main.css">
@@ -43,7 +43,7 @@
             <nav class="header-nav">
                 <ul class="header-nav__list">
                     <li class="header-nav__list-item">
-                        <a href="/price" class="header-nav__list-link">価格・スペック</a>
+                        <a href="/price" class="header-nav__list-link header-nav__list-link--green">価格・スペック</a>
                     </li>
                     <li class="header-nav__list-item">
                         <a href="/faq" class="header-nav__list-link">よくあるご質問</a>
@@ -52,7 +52,7 @@
             </nav>
             <div class="hamburger">
                 <button class="hamburger__button"><img class="hamburger__button-image"
-                        src="/assets/images/header/ico_bar.svg" alt="ナビメニュー"></button>
+                        src="/assets/images/header/ico_bar.svg" alt="メニュー"></button>
                 <nav class="hamburger-nav">
                     <ul class="hamburger-nav__list">
                         <li class="hamburger-nav__list-item">
@@ -79,12 +79,13 @@
                 </div>
                 <!-- パンくずリスト -->
             </div>
-            <ul class="breadcrumb">
-                <li class="breadcrumb__list">
-                    <a href="/" class="breadcrumb__list-link">トップ</a>
+            <ul class="products-service-breadcrumb breadcrumb">
+                <li class="products-service-breadcrumb__list breadcrumb__list">
+                    <a href="/" class="products-service-breadcrumb__list-link breadcrumb__list-link">トップ</a>
                 </li>
                 <li class="breadcrumb-list">
-                    <a href="/" class="breadcrumb__list-link breadcrumb__list-link--none">価格・スペック</a>
+                    <a href="/price"
+                        class="products-service-breadcrumb__list-link breadcrumb__list-link breadcrumb__list-link--none">価格・スペック</a>
                 </li>
             </ul>
         </div>
@@ -97,42 +98,21 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <picture>
-                                    <source media="(min-width: 768px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_1_pc.png">
-                                    <source media="(max-width: 767px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_1_sp.png">
-                                    <img class="swiper-slide__image"
-                                        src="/assets/images/products_service/pht_products_service_carousel_1_pc.png"
-                                        alt="">
-                                </picture>
+                                <img class="swiper-slide__image"
+                                    src="/assets/images/products_service/pht_products_service_carousel_1_pc.png" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <picture>
-                                    <source media="(min-width: 768px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_2_pc.png">
-                                    <source media="(max-width: 767px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_2_sp.png">
-                                    <img class="swiper-slide__image"
-                                        src="/assets/images/products_service/pht_products_service_carousel_2_pc.png"
-                                        alt="">
-                                </picture>
+                                <img class="swiper-slide__image"
+                                    src="/assets/images/products_service/pht_products_service_carousel_2_pc.png" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <picture>
-                                    <source media="(min-width: 768px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_3_pc.png">
-                                    <source media="(max-width: 767px)"
-                                        srcset="/assets/images/products_service/pht_products_service_carousel_3_sp.png">
-                                    <img class="swiper-slide__image"
-                                        src="/assets/images/products_service/pht_products_service_carousel_3_pc.png"
-                                        alt="">
-                                </picture>
+                                <img class="swiper-slide__image"
+                                    src="/assets/images/products_service/pht_products_service_carousel_3_pc.png" alt="">
                             </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
                         </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
             </div>
@@ -199,8 +179,8 @@
                 <table class="spec__table">
                     <thead>
                         <tr>
-                            <th class="spec__table-title">ドローン名</th>
-                            <th class="spec__table-description">アグリ・ファルコン</th>
+                            <th class="spec__table-title spec__table-title--top">ドローン名</th>
+                            <th class="spec__table-description spec__table-description--top">アグリ・ファルコン</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -214,29 +194,36 @@
                         </tr>
                         <tr>
                             <td class="spec__table-title">最大積載量</td>
-                            <td class="spec__table-description">5&nbspkg</td>
+                            <td class="spec__table-description">5&nbsp;kg</td>
                         </tr>
                         <tr>
                             <td class="spec__table-title">操作距離</td>
-                            <td class="spec__table-description">3&nbspkm</td>
+                            <td class="spec__table-description">3&nbsp;km</td>
                         </tr>
                         <tr>
                             <td class="spec__table-title">機体重量</td>
-                            <td class="spec__table-description">8&nbspkg</td>
+                            <td class="spec__table-description">8&nbsp;kg</td>
                         </tr>
                         <tr>
                             <td class="spec__table-title">機体寸法</td>
-                            <td class="spec__table-description">150&nbspx&nbsp150&nbspx&nbsp40&nbspcm</td>
+                            <td class="spec__table-description">150&nbsp;x&nbsp;150&nbsp;x&nbsp;40&nbsp;cm</td>
                         </tr>
                         <tr>
                             <td class="spec__table-title">機能・特徴</td>
-                            <td class="spec__table-description">機能・特徴</td>
+                            <td class="spec__table-description">自動操縦、植物生育モニタリング、農薬散布</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-
+        <!-- お問い合わせ -->
+        <section class="contact">
+            <div class="contact__container">
+                <a href="/contact" class="contact__button">
+                    <h2 class="contact__button-text">お問い合わせ</h2>
+                </a>
+            </div>
+        </section>
     </main>
     <!-- フッター -->
     <footer class="footer">

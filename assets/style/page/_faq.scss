@@ -1,0 +1,232 @@
+@use "../setting" as s;
+
+/*お問い合わせ------------------*/
+.faq {
+    &__heading {
+        &-title {
+            @include s.rs(
+                (
+                    padding-right: s.mvw(35),
+                )
+            );
+        }
+        &-image {
+            background-image: url("/assets/images/faq/main_visual_sp.png");
+            @include s.rs(
+                (
+                    background-image: url("/assets/images/faq/main_visual_pc.png"),
+                )
+            );
+        }
+    }
+}
+
+/*アコーディオン------------------*/
+.accordion {
+    padding-top: s.vw(36);
+    padding-bottom: s.vw(170);
+    @include s.rs(
+        (
+            padding-top: s.mvw(59),
+            padding-bottom: s.mvw(74),
+        )
+    );
+    &__container {
+        @include s.container(100%);
+        padding-inline: s.vw(16);
+        @include s.rs(
+            (
+                max-width: s.mvw(800),
+                padding-inline: 0,
+                margin-inline: auto,
+            )
+        );
+    }
+    &__item {
+        border: s.vw(1) solid s.$color-gray;
+        border-radius: s.vw(16);
+        @include s.rs(
+            (
+                border: s.mvw(1) solid s.$color-gray,
+                border-radius: s.mvw(16),
+            )
+        );
+        &:not(:last-child) {
+            margin-bottom: s.vw(20.4);
+            @include s.rs(
+                (
+                    margin-bottom: s.mvw(25.4),
+                )
+            );
+        }
+        &--active {
+            &:not(:last-child) {
+                margin-bottom: s.vw(24);
+                @include s.rs(
+                    (
+                        margin-bottom: s.mvw(25),
+                    )
+                );
+            }
+        }
+    }
+    &-summary {
+        &__wrapper {
+            position: relative;
+            display: flex;
+            cursor: pointer;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-top: s.vw(13);
+            padding-bottom: s.vw(17);
+            padding-inline: s.vw(23);
+            font-size: s.vw(16);
+            font-weight: 700;
+            @include s.rs(
+                (
+                    font-size: s.mvw(18),
+                    padding-top: s.mvw(11),
+                    padding-bottom: s.mvw(15),
+                    padding-inline: s.mvw(30),
+                )
+            );
+        }
+        &__icon {
+            font-size: s.vw(24);
+            @include s.font-montserrat(700);
+            color: s.$color-green;
+            @include s.rs(
+                (
+                    font-size: s.mvw(24),
+                )
+            );
+        }
+        &__middle-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            @include s.rs(());
+        }
+        &__category {
+            display: flex;
+            flex-direction: row;
+            column-gap: s.vw(8);
+            margin-top: s.vw(10);
+            padding-left: s.vw(16);
+            @include s.rs(
+                (
+                    column-gap: s.mvw(8),
+                    margin-top: s.mvw(12),
+                    padding-left: s.mvw(16),
+                )
+            );
+            &-item {
+                display: inline-block;
+                width: s.vw(100);
+                font-size: s.vw(11);
+                color: s.$color-green;
+                text-align: center;
+                border: s.vw(1) solid s.$color-green;
+                border-radius: s.vw(4);
+                padding: s.vw(1) s.vw(5);
+                @include s.rs(
+                    (
+                        width: s.mvw(100),
+                        font-size: s.mvw(11),
+                        border: s.mvw(1) solid s.$color-green,
+                        border-radius: s.mvw(4),
+                        padding: s.mvw(1) s.mvw(5),
+                    )
+                );
+            }
+        }
+        &__title {
+            font-size: s.vw(16);
+            font-weight: 700;
+            line-break: anywhere;
+            padding-top: s.vw(1);
+            padding-left: s.vw(16);
+            padding-right: s.vw(30);
+            text-align: start;
+            @include s.rs(
+                (
+                    font-size: s.mvw(18),
+                    padding-top: s.mvw(9),
+                    padding-left: s.mvw(16),
+                    padding-right: s.mvw(30),
+                )
+            );
+        }
+        &__button {
+            display: block;
+            position: absolute;
+            width: s.vw(25);
+            top: s.vw(23);
+            right: s.vw(20);
+            content: url("/assets/images/faq/icon_plus.svg");
+            height: fit-content;
+            @include s.rs(
+                (
+                    width: s.mvw(26),
+                    top: s.mvw(21.5),
+                    right: s.mvw(27),
+                )
+            );
+            &--active {
+                content: url("/assets/images/faq/icon_minus.svg");
+                @include s.rs(
+                    (
+                        width: s.mvw(26),
+                        top: s.mvw(22),
+                        right: s.mvw(28),
+                    )
+                );
+            }
+        }
+    }
+    &__detail {
+        display: none;
+        overflow: hidden;
+        font-size: s.vw(16);
+        line-break: anywhere;
+        padding-bottom: s.vw(17);
+        padding-inline: s.vw(24);
+        margin-top: s.vw(-15.4);
+        @include s.rs(
+            (
+                font-size: s.mvw(16),
+                letter-spacing: 0.003em,
+                padding-bottom: s.mvw(17),
+                padding-inline: s.mvw(31),
+                margin-top: s.mvw(1.75),
+            )
+        );
+        &--padding-one {
+            padding-left: s.vw(26);
+            padding-right: s.vw(22);
+            @include s.rs(
+                (
+                    padding-left: s.mvw(31),
+                    padding-right: s.mvw(28),
+                    margin-top: s.mvw(1.3),
+                )
+            );
+        }
+        &--padding-two {
+            padding-left: s.vw(26);
+            padding-right: s.vw(22);
+            margin-top: s.vw(-7);
+            @include s.rs(
+                (
+                    padding-left: s.mvw(31),
+                    padding-right: s.mvw(28),
+                    margin-top: s.mvw(-0.3),
+                )
+            );
+        }
+        &--active {
+            display: block;
+        }
+    }
+}

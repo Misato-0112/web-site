@@ -78,6 +78,9 @@
                         padding-block: s.mvw(42),
                     )
                 );
+                &--green {
+                    color: s.$color-green;
+                }
             }
         }
     }

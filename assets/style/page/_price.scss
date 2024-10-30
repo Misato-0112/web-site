@@ -1,13 +1,36 @@
 @use "../setting" as s;
 
+/*パンくずリスト------------------*/
+.products-service {
+    &-breadcrumb {
+        padding-right: s.vw(14);
+        @include s.rs(
+            (
+                padding-right: s.mvw(98),
+            )
+        );
+        &__list {
+            padding-right: s.vw(20);
+            letter-spacing: 0.02em;
+            @include s.rs(
+                (
+                    padding-right: s.mvw(20),
+                )
+            );
+        }
+    }
+}
+
 /*ギャラリー------------------*/
 .gallery {
     &__container {
         @include s.container(100%);
+        padding-top: s.vw(30);
         padding-inline: s.vw(15);
         @include s.rs(
             (
                 width: s.mvw(800),
+                padding-top: s.mvw(51),
                 padding-inline: 0,
                 margin-inline: auto,
             )
@@ -78,7 +101,7 @@
             (
                 width: s.mvw(800),
                 padding-inline: 0,
-                padding-bottom: s.vw(54),
+                padding-bottom: s.mvw(55),
                 margin-inline: auto,
             )
         );
@@ -149,14 +172,14 @@
     width: 100%;
     &__container {
         @include s.container(100%);
-        padding-bottom: s.vw(52);
-        padding-inline: s.vw(15);
+        padding-bottom: s.vw(50);
+        padding-inline: s.vw(16);
         @include s.rs(
             (
                 width: s.mvw(800),
                 padding-inline: 0,
                 margin-inline: auto,
-                padding-bottom: s.mvw(56),
+                padding-bottom: s.mvw(54),
             )
         );
     }
@@ -164,15 +187,11 @@
         font-size: s.vw(32);
         @include s.font-montserrat(700);
         line-height: 1.5;
-        letter-spacing: -0.045em;
-        padding-top: s.vw(11);
-        transform: scale(1.18, 0.9);
-        margin-left: s.vw(29);
+        padding-top: s.vw(13);
         @include s.rs(
             (
                 font-size: s.mvw(32),
-                padding-top: s.mvw(19),
-                margin-left: s.mvw(45),
+                padding-top: s.mvw(21),
             )
         );
         &--small {
@@ -193,14 +212,14 @@
     width: 100%;
     &__container {
         @include s.container(100%);
-        padding-bottom: s.vw(53);
+        padding-bottom: s.vw(63);
         padding-inline: s.vw(16);
         @include s.rs(
             (
                 width: s.mvw(800),
                 padding-inline: 0,
                 margin-inline: auto,
-                padding-bottom: s.mvw(53),
+                padding-bottom: s.mvw(72),
             )
         );
     }
@@ -209,10 +228,13 @@
         font-weight: 700;
         vertical-align: middle;
         padding-top: s.vw(21);
+        padding-bottom: s.vw(14);
         @include s.rs(
             (
                 font-size: s.mvw(24),
-                padding-top: s.mvw(21),
+                padding-top: s.mvw(30),
+                padding-bottom: s.mvw(20),
+                padding-left: s.mvw(30),
             )
         );
         &::before {
@@ -225,9 +247,9 @@
             margin-bottom: s.vw(3);
             @include s.rs(
                 (
-                    width: s.mvw(40),
-                    height: s.mvw(2),
-                    margin-right: s.mvw(20),
+                    width: s.mvw(3),
+                    height: s.mvw(40),
+                    margin-right: s.mvw(16),
                     margin-bottom: s.mvw(3),
                 )
             );
@@ -237,24 +259,163 @@
         width: 100%;
         border-collapse: collapse;
         font-size: s.vw(16);
-        border: 1px solid s.$color-gray;
+        border-top: s.vw(1) solid s.$color-gray;
+        border-right: s.vw(1) solid s.$color-gray;
+        border-left: s.vw(1) solid s.$color-gray;
         @include s.rs(
             (
                 font-size: s.mvw(16),
+                border-top: s.mvw(1) solid s.$color-gray,
+                border-right: s.mvw(1) solid s.$color-gray,
+                border-left: s.mvw(1) solid s.$color-gray,
+                margin-left: s.mvw(30),
             )
         );
-        &-title {
-            display: block;
-            font-weight: 700;
-            text-align: start;
-            background-color: s.$color-table;
-            border: s.vw(1) solid s.$color-gray;
+        @include s.mq() {
+            width: calc(100% - s.vwt(30) * 2);
         }
+        @include s.mq(lg) {
+            width: calc(100% - s.px2Rem(30) * 2);
+        }
+        &-title,
         &-description {
             display: block;
+            height: s.vw(39);
             font-weight: 400;
             text-align: start;
-            border: s.vw(1) solid s.$color-gray;
+            border-bottom: s.vw(1) solid s.$color-gray;
+            padding-left: s.vw(18);
+            padding-block: s.vw(4);
+            @include s.rs(
+                (
+                    height: s.mvw(62.8),
+                    display: inline-block,
+                    border-bottom: s.mvw(1) solid s.$color-gray,
+                    padding-left: s.mvw(20),
+                    padding-block: s.mvw(16),
+                )
+            );
+        }
+        &-title {
+            font-weight: 700;
+            background-color: s.$color-table;
+            border-right: s.vw(1) solid s.$color-gray;
+            padding-left: s.vw(19);
+            @include s.rs(
+                (
+                    width: s.mvw(200),
+                    border-right: s.mvw(1) solid s.$color-gray,
+                    padding-left: s.mvw(18),
+                )
+            );
+            &--top {
+                @include s.rs(
+                    (
+                        letter-spacing: 0.01em,
+                        padding-block: s.mvw(16),
+                        padding-left: s.mvw(20),
+                    )
+                );
+            }
+        }
+        &-description {
+            @include s.rs(
+                (
+                    padding-left: s.mvw(20),
+                )
+            );
+            @include s.mq() {
+                width: calc(100% - s.vwt(200));
+            }
+            @include s.mq(lg) {
+                width: calc(100% - s.px2Rem(200));
+            }
+            &--top {
+                @include s.rs(
+                    (
+                        letter-spacing: 0.01em,
+                        padding-left: s.mvw(20),
+                        padding-block: s.mvw(16),
+                    )
+                );
+            }
+        }
+    }
+}
+
+/*お問い合わせ------------------*/
+.contact {
+    width: 100%;
+    height: s.vw(360);
+    background-image: url("/assets/images/products_service/bg_products_service_contact_sp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include s.rs(
+        (
+            height: s.mvw(450),
+            background-image: url("/assets/images/products_service/bg_products_service_contact_pc.jpg"),
+        )
+    );
+    &__container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-inline: s.vw(16);
+        @include s.rs(
+            (
+                padding-inline: 0,
+            )
+        );
+    }
+    &__button {
+        position: absolute;
+        top: calc(50% - s.vw(39));
+        right: calc(50% - s.vw(358) / 2);
+        z-index: 2;
+        display: block;
+        height: s.vw(80);
+        width: s.vw(358);
+        color: s.$color-white;
+        text-align: center;
+        border: s.vw(2) solid s.$color-white;
+        border-radius: s.vw(40);
+        padding-block: s.vw(28);
+        @include s.rs(
+            (
+                height: s.mvw(80),
+                width: s.mvw(358),
+                border: s.mvw(2) solid s.$color-white,
+                border-radius: s.mvw(40),
+                padding-block: s.mvw(28),
+            )
+        );
+        // タブレット用
+        @include s.mq() {
+            top: calc(50% - s.vwt(39));
+            right: calc(50% - s.vwt(358) / 2);
+        }
+        // PC用
+        @include s.mq(lg) {
+            top: calc(50% - s.px2Rem(39));
+            right: calc(50% - s.px2Rem(358) / 2);
+        }
+        &-text {
+            font-size: s.vw(20);
+            line-height: 1;
+            @include s.rs(
+                (
+                    font-size: s.mvw(20),
+                )
+            );
+        }
+        &:hover {
+            background-color: s.$color-white;
+            color: s.$color-green;
+            opacity: 1;
         }
     }
 }
