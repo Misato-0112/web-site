@@ -48,7 +48,7 @@ body {
             font-size: s.vw(20);
             font-weight: 700;
             @include s.tracking(0);
-            line-height: 1.4;
+            line-height: 1.3;
             @include s.rs(
                 (
                     font-size: s.mvw(28),
