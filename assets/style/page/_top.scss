@@ -297,7 +297,9 @@
         padding-inline: s.vw(16);
         @include s.rs(
             (
-                padding-inline: s.mvw(150),
+                max-width: s.mvw(1100),
+                padding-inline: 0,
+                margin-inline: auto,
             )
         );
     }
@@ -389,8 +391,8 @@
                     );
                     // タブレット用
                     @include s.mq(md) {
-                        column-gap: s.vwt(10);
-                        padding-inline: s.vwt(10);
+                        column-gap: s.vwt(30);
+                        padding-inline: s.vwt(32);
                     }
 
                     // 1400px以上のPC用
@@ -444,14 +446,6 @@
                 }
                 &--br {
                     display: block;
-                    // タブレット用
-                    @include s.mq(md) {
-                        display: inline;
-                    }
-                    // PC用
-                    @include s.mq(lg) {
-                        display: block;
-                    }
                     &-none {
                         // タブレット用
                         @include s.mq(md) {
