@@ -169,7 +169,7 @@
             @include s.rs(
                 (
                     width: s.mvw(26),
-                    top: s.mvw(21.5),
+                    top: s.mvw(23),
                     right: s.mvw(27),
                 )
             );
@@ -178,8 +178,8 @@
                 @include s.rs(
                     (
                         width: s.mvw(26),
-                        top: s.mvw(22),
-                        right: s.mvw(28),
+                        top: s.mvw(23),
+                        right: s.mvw(27),
                     )
                 );
             }
