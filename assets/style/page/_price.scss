@@ -187,6 +187,7 @@
         font-size: s.vw(32);
         @include s.font-montserrat(700);
         line-height: 1.5;
+        color: s.$color-green;
         padding-top: s.vw(13);
         @include s.rs(
             (
