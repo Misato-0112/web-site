@@ -1,31 +1,25 @@
 $(document).ready(function () {
+    // ハンバーガーメニューのフェードイン・フェードアウト
     var hamburger = $(".hamburger-nav");
     $(".hamburger__button").on("click", function () {
-        hamburger.toggleClass("hamburger-nav--active");
+        hamburger.fadeToggle(300).toggleClass("hamburger-nav--active");
     });
 
     $(window).on("resize", function () {
-        hamburger.removeClass("hamburger-nav--active");
+        hamburger.removeClass("hamburger-nav--active").hide();
     });
 
+    // アコーディオンのスライドイン・アウト
     if ($(".accordion").length > 0) {
-        $(".accordion__item").click(function () {
-            var parentItem = $(this);
-            var detail = parentItem.find(".accordion__detail");
-            var button = parentItem.find(".accordion-summary__button");
-
-            if (detail.hasClass("accordion__detail--active")) {
-                detail.removeClass("accordion__detail--active");
-                button.removeClass("accordion-summary__button--active");
-                parentItem.removeClass("accordion__item--active");
-            } else {
-                detail.addClass("accordion__detail--active");
-                button.addClass("accordion-summary__button--active");
-                parentItem.addClass("accordion__item--active");
-            }
+        $(".accordion-summary__wrapper").click(function () {
+            var parentItem = $(this).closest(".accordion__item");
+            parentItem.find(".accordion__detail").slideToggle(300).toggleClass("accordion__detail--active");
+            parentItem.find(".accordion-summary__button").toggleClass("accordion-summary__button--active");
+            parentItem.toggleClass("accordion__item--active");
         });
     }
 
+    // Swiperの設定
     if ($(".swiper").length > 0) {
         const mySwiper = new Swiper(".swiper", {
             slidesPerView: 1,

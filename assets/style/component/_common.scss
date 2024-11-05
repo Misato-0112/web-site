@@ -30,7 +30,7 @@ body {
     font-size: s.vw(16);
     line-height: 1.75;
     color: s.$color-text;
-    font-family: "Noto Sans JP", serif;
+    font-family: "Noto Sans JP", sans-serif;
     @include s.rs(
         (
             font-size: s.mvw(18),

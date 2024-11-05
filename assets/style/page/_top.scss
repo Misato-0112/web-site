@@ -147,16 +147,26 @@
                     )
                 );
                 &--br {
+                    display: block;
                     @include s.rs(
                         (
                             display: block,
                         )
                     );
+                    &-none {
+                        display: inline;
+                        @include s.rs(
+                            (
+                                display: block,
+                            )
+                        );
+                    }
                 }
                 &--space {
-                    letter-spacing: -0.01em;
+                    letter-spacing: -0.001em;
                     @include s.rs(
                         (
+                            display: block,
                             letter-spacing: 0.0085em,
                         )
                     );
@@ -206,7 +216,7 @@
     @include s.rs(
         (
             padding-top: s.mvw(54),
-            padding-bottom: s.mvw(71),
+            padding-bottom: s.mvw(64),
         )
     );
     &__container {
@@ -263,19 +273,28 @@
                 font-weight: 700;
                 @include s.tracking(0);
                 background-color: s.$color-white;
-                padding-block: s.vw(12);
+                padding-top: s.vw(12);
+                padding-bottom: s.vw(12);
                 padding-inline: s.vw(16);
                 border-bottom-left-radius: s.vw(24);
                 border-bottom-right-radius: s.vw(24);
                 @include s.rs(
                     (
                         font-size: s.mvw(19),
-                        padding-inline: s.mvw(19),
-                        padding-block: s.mvw(10),
+                        padding-top: s.mvw(11),
+                        padding-bottom: s.mvw(16),
                         border-bottom-left-radius: s.mvw(24),
                         border-bottom-right-radius: s.mvw(24),
                     )
                 );
+                // タブレット表示
+                @include s.mq(md) {
+                    padding-inline: s.vwt(5);
+                }
+                // PC表示
+                @include s.mq(lg) {
+                    padding-inline: s.px2Rem(19);
+                }
             }
         }
     }

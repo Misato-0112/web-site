@@ -359,7 +359,6 @@
         )
     );
     &__container {
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -373,10 +372,6 @@
         );
     }
     &__button {
-        position: absolute;
-        top: calc(50% - s.vw(39));
-        right: calc(50% - s.vw(358) / 2);
-        z-index: 2;
         display: block;
         height: s.vw(80);
         width: s.vw(358);
