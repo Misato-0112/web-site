@@ -23,7 +23,7 @@ $(document).ready(function () {
     if ($(".swiper").length > 0) {
         const mySwiper = new Swiper(".swiper", {
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 15,
 
             pagination: {
                 el: ".swiper-pagination",
